@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import { Button } from "semantic-ui-react";
+import { Link } from "react-router-dom";
 
 class Register extends Component {
   render() {
@@ -18,6 +19,9 @@ class Register extends Component {
             <div class="input-group">
               <input type="password" placeholder="password" />
             </div>
+            <h4>
+              Already registered.? <Link to="/login">Sign In</Link>
+            </h4>
 
             <Button>submit</Button>
           </div>
