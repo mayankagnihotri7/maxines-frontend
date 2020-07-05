@@ -14,7 +14,7 @@ class Header extends React.Component {
             <nav className="margin-top-1rem margin-top-3rem">
               <NavLink
                 to="/"
-                activeClassName="active"
+                activeClassName="active-class"
                 className="margin-right-1rem font-color"
                 exact
               >
@@ -22,13 +22,13 @@ class Header extends React.Component {
               </NavLink>
               <NavLink
                 to="/about"
-                activeClassName="active"
+                activeClassName="active-class"
                 className="margin-right-1rem font-color"
               >
                 About
               </NavLink>
               <NavLink
-                activeClassName="active"
+                activeClassName="active-class"
                 className="margin-right-1rem font-color"
                 to="/login"
               >

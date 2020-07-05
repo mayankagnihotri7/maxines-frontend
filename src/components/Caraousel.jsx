@@ -10,7 +10,7 @@ class Caraousel extends Component {
             <li className="slide-container">
               <div className="slide-image">
                 <img
-                  src="https://all4desktop.com/data_images/original/4244814-food.jpg"
+                  src="https://www.pixelstalk.net/wp-content/uploads/2016/08/Food-Wallpapers-HD-For-Desktop.jpg"
                   alt="arriving shortly.."
                 />
               </div>
@@ -27,7 +27,7 @@ class Caraousel extends Component {
             <li className="slide-container">
               <div className="slide-image">
                 <img
-                  src="https://theculinaryaddict.com/wp-content/uploads/2019/10/vegetables-italian-pizza-restaurant.jpg"
+                  src="https://www.pxwall.com/wp-content/uploads/2018/06/Wallpaper%20burger,%20steak,%20fire,%205k,%20Food%20788221141.jpg"
                   alt="arriving shortly.."
                 />
               </div>
@@ -44,7 +44,7 @@ class Caraousel extends Component {
             <li className="slide-container">
               <div className="slide-image">
                 <img
-                  src="https://wallpaperaccess.com/full/680036.jpg"
+                  src="https://thewallpaper.co//wp-content/uploads/2016/03/bread-food-restaurant-people-hd-wallpaper-high-resolution-background-images-desktop-images-of-windows-amazing-cool-best-wallpaper-ever-images-free-stock-photos-1600x1025.jpg"
                   alt="arriving shortly.."
                 />
               </div>

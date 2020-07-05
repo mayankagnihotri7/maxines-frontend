@@ -6,17 +6,17 @@ class Register extends Component {
   render() {
     return (
       <>
-        <div class="bg"></div>
-        <div class="modal">
-          <div class="card">
-            <div class="title">Sign up</div>
-            <div class="input-group">
+        <div className="bg"></div>
+        <div className="modal">
+          <div className="card">
+            <div className="title">Sign up</div>
+            <div className="input-group">
               <input type="text" placeholder="username" />
             </div>
-            <div class="input-group">
+            <div className="input-group">
               <input type="email" placeholder="email" />
             </div>
-            <div class="input-group">
+            <div className="input-group">
               <input type="password" placeholder="password" />
             </div>
             <h4>
