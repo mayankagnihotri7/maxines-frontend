@@ -198,13 +198,13 @@ body {
   text-align: center;
 }
 
+.image-profile {
+  height: 100px;
+}
+
 /* EE7B01 4520AD 021EFA 5B59E8 */
 
 /* Caraousel */
-/* .carousel {
-  margin-left: 5%;
-  margin-right: 5%;
-} */
 
 ul.slides {
   display: block;

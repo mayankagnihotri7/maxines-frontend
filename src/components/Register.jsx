@@ -9,7 +9,6 @@ class Register extends Component {
       username: "",
       email: "",
       password: "",
-      redirect: null,
     };
   }
 
@@ -18,6 +17,7 @@ class Register extends Component {
   };
 
   handleSubmit = () => {
+    let { email } = this.state;
     let url = `http://localhost:4000/api/users`;
     fetch(url, {
       method: "POST",
@@ -25,7 +25,7 @@ class Register extends Component {
       body: JSON.stringify({ user: this.state }),
     }).then((res) => {
       if (res.status === 201) {
-        this.props.history.push(`/${this.state.email}/verify`);
+        this.props.history.push(`/api/users/${email}/verify`);
       }
     });
   };
@@ -70,7 +70,7 @@ class Register extends Component {
               Already registered.? <Link to="/login">Sign In</Link>
             </h4>
 
-            <Button onClick={this.handleSubmit} email={email}>submit</Button>
+            <Button onClick={() => this.handleSubmit()}>submit</Button>
           </div>
         </div>
       </>

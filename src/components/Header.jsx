@@ -9,31 +9,14 @@ class Header extends React.Component {
         <header className="header-color">
           <ul className="flex container">
             <Link to="/">
-              <img src={image} alt="Comming Soon..." className="header-image" />
+              <img src={image} alt="Coming Soon..." className="header-image" />
             </Link>
             <nav className="margin-top-1rem margin-top-3rem">
-              <NavLink
-                to="/"
-                activeClassName="active-class"
-                className="margin-right-1rem font-color"
-                exact
-              >
-                Home
-              </NavLink>
-              <NavLink
-                to="/about"
-                activeClassName="active-class"
-                className="margin-right-1rem font-color"
-              >
-                About
-              </NavLink>
-              <NavLink
-                activeClassName="active-class"
-                className="margin-right-1rem font-color"
-                to="/login"
-              >
-                Take me in
-              </NavLink>
+              {this.props.isLoggedIn ? (
+                <AuthHeader username={this.props.userInfo.username} />
+              ) : (
+                <NonAuthHeader />
+              )}
             </nav>
           </ul>
         </header>
@@ -41,5 +24,46 @@ class Header extends React.Component {
     );
   }
 }
+
+const NonAuthHeader = () => {
+  return (
+    <NavLink
+      activeClassName="active-class"
+      className="margin-right-1rem font-color"
+      to="/login"
+    >
+      Take me in
+    </NavLink>
+  );
+};
+
+const AuthHeader = (props) => {
+  return (
+    <>
+      <NavLink
+        to="/"
+        activeClassName="active-class"
+        className="margin-right-1rem font-color"
+        exact
+      >
+        Home
+      </NavLink>
+      <NavLink
+        to="/about"
+        activeClassName="active-class"
+        className="margin-right-1rem font-color"
+      >
+        About
+      </NavLink>
+      <NavLink
+        to="/api/user"
+        activeClassName="active-class"
+        className="margin-right-1rem font-color"
+      >
+      {props.username}
+      </NavLink>
+    </>
+  );
+};
 
 export default Header;

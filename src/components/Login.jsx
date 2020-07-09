@@ -2,8 +2,40 @@ import React, { Component } from "react";
 import { Link } from "react-router-dom";
 import { Button, Divider, Form, Grid, Segment } from "semantic-ui-react";
 
-class SignUp extends Component {
+class Login extends Component {
+  constructor(props) {
+    super(props);
+    this.state = { email: "", password: "", error: "" };
+  }
+
+  handleInput = ({ target: { name, value } }) => {
+    this.setState({ [name]: value });
+  };
+
+  handleLogin = () => {
+    let url = `http://localhost:4000/api/users/login`;
+    fetch(url, {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ user: this.state }),
+    })
+      .then((res) => {
+        if (res.status === 200) {
+          this.props.history.push("/");
+          this.props.updateLoggedIn(true);
+          return res.json();
+        } else {
+          this.setState({ error: "Something went wrong.!" });
+        }
+      })
+      .then((res) => {
+        localStorage.setItem("authToken", res.token);
+      });
+  };
+
   render() {
+    let { email, password } = this.state;
+
     return (
       <Segment placeholder>
         <Grid columns={2} relaxed="very" stackable>
@@ -12,22 +44,32 @@ class SignUp extends Component {
               <Form.Input
                 icon="user"
                 iconPosition="left"
-                label="Username"
-                placeholder="Username"
+                label="Email"
+                placeholder="Enter email"
+                onChange={this.handleInput}
+                name="email"
+                value={email}
               />
               <Form.Input
                 icon="lock"
                 iconPosition="left"
                 label="Password"
                 type="password"
+                onChange={this.handleInput}
+                name="password"
+                value={password}
               />
 
-              <Button content="Login" primary />
+              <Button
+                content="Login"
+                primary
+                onClick={() => this.handleLogin()}
+              />
             </Form>
           </Grid.Column>
 
           <Grid.Column verticalAlign="middle">
-            <Link to='/register'>
+            <Link to="/register">
               <Button content="Sign up" icon="signup" size="big" />
             </Link>
           </Grid.Column>
@@ -39,4 +81,4 @@ class SignUp extends Component {
   }
 }
 
-export default SignUp;
+export default Login;
