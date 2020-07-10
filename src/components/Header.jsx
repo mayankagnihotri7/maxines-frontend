@@ -60,7 +60,7 @@ const AuthHeader = (props) => {
         activeClassName="active-class"
         className="margin-right-1rem font-color"
       >
-      {props.username}
+        {props.username}
       </NavLink>
     </>
   );
