@@ -2,7 +2,6 @@ import React, { Component } from "react";
 import { withRouter } from "react-router-dom";
 
 class EditProfile extends Component {
-
   handleInput = ({ target: { name, value } }) => {
     if (this.props.userInfo) {
       let user = this.props.userInfo;
@@ -28,7 +27,6 @@ class EditProfile extends Component {
         }
       })
       .then((data) => {
-        console.log(data, "data arriving...");
         this.setState({ userInfo: data.user });
         this.props.history.push("/");
       });
@@ -36,7 +34,6 @@ class EditProfile extends Component {
 
   render() {
     let { username, email, bio } = this.props.userInfo;
-    console.log(this.props.userInfo, "input");
     return (
       <div className="edit-form_container">
         <div id="contact">
@@ -68,11 +65,7 @@ class EditProfile extends Component {
             className="fieldset"
           />
 
-          <button
-            type="submit"
-            id="contact-submit"
-            onClick={this.handleUpdate}
-          >
+          <button type="submit" id="contact-submit" onClick={this.handleUpdate}>
             Update
           </button>
         </div>

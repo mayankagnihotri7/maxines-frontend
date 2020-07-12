@@ -45,14 +45,6 @@ class App extends Component {
     this.setState({ isLoggedIn: status });
   };
 
-  // handleInput = ({ target: { name, value } }) => {
-  //   if (this.state.user) {
-  //     let user = this.state.user;
-  //     user[name] = value;
-  //     this.setState({ user });
-  //   }
-  // };
-
   render() {
     return (
       <>
@@ -76,11 +68,7 @@ class App extends Component {
           <Route path="/createMenu" component={CreateMenu} />
           <Route
             to="/editProfile"
-            render={() => (
-              <EditProfile
-                userInfo={this.state.userInfo}
-              />
-            )}
+            render={() => <EditProfile userInfo={this.state.userInfo} />}
           />
           <Error />
         </Switch>

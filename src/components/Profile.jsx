@@ -3,13 +3,8 @@ import "semantic-ui-react";
 import { Link } from "react-router-dom";
 
 class Profile extends Component {
-  componentDidUpdate(prevProps, prevState) {
-    console.log("hello");
-  }
-
   render() {
     let { email, username, bio, image } = this.props.userInfo;
-    // console.log(this.props.userInfo);
     return (
       <div>
         <div className="ui pointing secondary menu container">
