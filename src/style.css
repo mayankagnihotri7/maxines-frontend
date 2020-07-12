@@ -438,13 +438,13 @@ a.submit {
 }
 
 #contact {
-  background: black;
+  background: #002E62;
   padding: 25px;
   margin: 50px 0;
 }
 
 #contact h3 {
-  color: #f96;
+  color: #0177D7;
   display: block;
   font-size: 30px;
   font-weight: 400;
@@ -472,7 +472,7 @@ a.submit {
   width: 100%;
   border: 1px solid #ccc;
   background: #dcdcdc;
-  margin: 0 0 5px;
+  margin: 1rem 0 5px;
   padding: 10px;
 }
 
@@ -497,9 +497,9 @@ a.submit {
   cursor: pointer;
   width: 100%;
   border: none;
-  background: gold;
-  color: black;
-  margin: 0 0 5px;
+  background: #009AC6;
+  color: #002E62;
+  margin: 1rem 0 5px;
   padding: 10px;
   font-size: 15px;
 }

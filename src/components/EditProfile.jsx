@@ -1,31 +1,14 @@
 import React, { Component } from "react";
+import { withRouter } from "react-router-dom";
 
 class EditProfile extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      user: "",
-    };
-  }
-
-  componentDidMount() {
-    let url = `http://localhost:4000/api/user`;
-    fetch(url, {
-      method: "GET",
-      headers: {
-        "Content-Type": "application/json",
-        authorization: `Token ${localStorage.authToken}`,
-      },
-    })
-      .then((res) => res.json())
-      .then(({ user }) => this.setState({ user }));
-  }
 
   handleInput = ({ target: { name, value } }) => {
-    if (this.state.user) {
-      let user = this.state.user;
+    if (this.props.userInfo) {
+      let user = this.props.userInfo;
       user[name] = value;
       this.setState({ user });
+      // this.props.userInfo = user;
     }
   };
 
@@ -38,15 +21,22 @@ class EditProfile extends Component {
         authorization: `Token ${localStorage.authToken}`,
       },
       body: JSON.stringify({ profile: this.state.user }),
-    }).then((res) => {
-      if (res.status === 200) {
+    })
+      .then((res) => {
+        if (res.status === 200) {
+          return res.json();
+        }
+      })
+      .then((data) => {
+        console.log(data, "data arriving...");
+        this.setState({ userInfo: data.user });
         this.props.history.push("/");
-      }
-    });
+      });
   };
 
   render() {
-    let { username, email, bio } = this.state.user;
+    let { username, email, bio } = this.props.userInfo;
+    console.log(this.props.userInfo, "input");
     return (
       <div className="edit-form_container">
         <div id="contact">
@@ -78,7 +68,11 @@ class EditProfile extends Component {
             className="fieldset"
           />
 
-          <button type="submit" id="contact-submit" onClick={this.handleUpdate}>
+          <button
+            type="submit"
+            id="contact-submit"
+            onClick={this.handleUpdate}
+          >
             Update
           </button>
         </div>
@@ -87,4 +81,4 @@ class EditProfile extends Component {
   }
 }
 
-export default EditProfile;
+export default withRouter(EditProfile);

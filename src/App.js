@@ -8,6 +8,7 @@ import Verification from "./components/Verification";
 import About from "./components/About";
 import Profile from "./components/Profile";
 import EditProfile from "./components/EditProfile";
+import CreateMenu from "./components/CreateMenu";
 import Footer from "./components/Footer";
 import Error from "./components/Error";
 import { Route, Switch } from "react-router-dom";
@@ -34,7 +35,6 @@ class App extends Component {
       })
         .then((res) => res.json())
         .then(({ user }) => {
-          console.log(user, 'lllllllllllllllllllllllllllll')
           this.setState({ isLoggedIn: true, userInfo: user });
         })
         .catch((err) => this.setState({ isLoggedIn: false }));
@@ -44,6 +44,14 @@ class App extends Component {
   updateLoggedIn = (status) => {
     this.setState({ isLoggedIn: status });
   };
+
+  // handleInput = ({ target: { name, value } }) => {
+  //   if (this.state.user) {
+  //     let user = this.state.user;
+  //     user[name] = value;
+  //     this.setState({ user });
+  //   }
+  // };
 
   render() {
     return (
@@ -65,7 +73,15 @@ class App extends Component {
             path="/api/user"
             render={() => <Profile userInfo={this.state.userInfo} />}
           />
-          <Route to="/editProfile" component={EditProfile} />
+          <Route path="/createMenu" component={CreateMenu} />
+          <Route
+            to="/editProfile"
+            render={() => (
+              <EditProfile
+                userInfo={this.state.userInfo}
+              />
+            )}
+          />
           <Error />
         </Switch>
         <Footer />

@@ -3,9 +3,13 @@ import "semantic-ui-react";
 import { Link } from "react-router-dom";
 
 class Profile extends Component {
+  componentDidUpdate(prevProps, prevState) {
+    console.log("hello");
+  }
+
   render() {
     let { email, username, bio, image } = this.props.userInfo;
-    console.log(this.props.userInfo);
+    // console.log(this.props.userInfo);
     return (
       <div>
         <div className="ui pointing secondary menu container">
@@ -18,8 +22,11 @@ class Profile extends Component {
           <h2>{username}</h2>
           <h1>{email}</h1>
           <h3>{bio}</h3>
-          <Link className="item" to="/editProfile">
+          <Link className="item margin-right-1rem" to="/editProfile">
             Edit
+          </Link>
+          <Link className="item" to="/createMenu">
+            Create Menu
           </Link>
         </div>
       </div>
