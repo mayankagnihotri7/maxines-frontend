@@ -167,6 +167,10 @@ body {
   margin-right: 1rem;
 }
 
+.margin-bottom-1rem {
+  margin-bottom: 1rem;
+}
+
 .header-image {
   height: 150px;
 }
@@ -200,6 +204,27 @@ body {
 
 .image-profile {
   height: 100px;
+}
+
+.background-image {
+  background: linear-gradient(to right bottom, #ffffff69, rgba(0, 0, 255, 0.137), #ffff112d),
+    url("./908387-speciality-restaurant.jpg") no-repeat;
+  background-size: cover;
+  background-position: center;
+  height: 100vh;
+}
+
+.menu-container {
+  max-width: 1140px;
+  margin: 0 auto;
+}
+
+.padding-top-3rem {
+  padding-top: 3rem;
+}
+
+.menu-font {
+  color: #009ac6;
 }
 
 /* EE7B01 4520AD 021EFA 5B59E8 */
@@ -438,13 +463,13 @@ a.submit {
 }
 
 #contact {
-  background: #002E62;
+  background: #002e62;
   padding: 25px;
   margin: 50px 0;
 }
 
 #contact h3 {
-  color: #0177D7;
+  color: #0177d7;
   display: block;
   font-size: 30px;
   font-weight: 400;
@@ -497,8 +522,8 @@ a.submit {
   cursor: pointer;
   width: 100%;
   border: none;
-  background: #009AC6;
-  color: #002E62;
+  background: #009ac6;
+  color: #002e62;
   margin: 1rem 0 5px;
   padding: 10px;
   font-size: 15px;

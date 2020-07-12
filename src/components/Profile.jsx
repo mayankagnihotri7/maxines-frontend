@@ -11,6 +11,9 @@ class Profile extends Component {
           <Link className="item" to="/api/user">
             My Profile
           </Link>
+          <div className="right menu">
+            <Link to='/logout' className="item">Logout</Link>
+          </div>
         </div>
         <div className="ui segment container">
           <img src={image} alt="Coming Soon..." />
