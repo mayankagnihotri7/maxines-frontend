@@ -3,7 +3,7 @@ import React, { Component } from "react";
 class Footer extends Component {
   render() {
     return (
-      <footer className="margin-top-1rem">
+      <footer className="margin-top-1rem footer">
         <div className="text-align">
           <small className="footer-font">
             &copy; Maxines <span>(2020)</span>

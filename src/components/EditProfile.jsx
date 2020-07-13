@@ -7,7 +7,6 @@ class EditProfile extends Component {
       let user = this.props.userInfo;
       user[name] = value;
       this.setState({ user });
-      // this.props.userInfo = user;
     }
   };
 

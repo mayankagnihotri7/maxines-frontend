@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { Link } from "react-router-dom";
+import { withRouter, Link } from "react-router-dom";
 import { Button, Divider, Form, Grid, Segment } from "semantic-ui-react";
 
 class Login extends Component {
@@ -81,4 +81,4 @@ class Login extends Component {
   }
 }
 
-export default Login;
+export default withRouter(Login);
