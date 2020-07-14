@@ -6,6 +6,7 @@ import Login from "./components/Login.jsx";
 import Register from "./components/Register";
 import Verification from "./components/Verification";
 import About from "./components/About";
+import EditMenu from "./components/EditMenu";
 import Profile from "./components/Profile";
 import EditProfile from "./components/EditProfile";
 import CreateMenu from "./components/CreateMenu";
@@ -66,6 +67,7 @@ class App extends Component {
             render={() => <Profile userInfo={this.state.userInfo} />}
           />
           <Route path="/createMenu" component={CreateMenu} />
+          <Route path="/editMenu" component={EditMenu} />
           <Route
             to="/editProfile"
             render={() => <EditProfile userInfo={this.state.userInfo} />}
